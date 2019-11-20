@@ -1,3 +1,5 @@
+[![](https://github.com/astef/ResharperBugs/workflows/.NET%20Core/badge.svg)](https://github.com/astef/ResharperBugs/actions)
+
 # Issues
 
 ![Issues](./issues.png?raw=true "Program.cs")
