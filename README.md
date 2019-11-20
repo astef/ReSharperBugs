@@ -1,0 +1,1 @@
+# ResharperCSharp8Support
