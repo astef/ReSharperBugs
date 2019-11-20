@@ -48,13 +48,12 @@ namespace ConsoleApp1
             static string? F() => null;
             string f = F();
         }
-    }
 
-    internal static class MyClass
-    {
         // no refactoring suggested, as it was with Item class
         internal class MyClass2
         {
         }
     }
+
+
 }
