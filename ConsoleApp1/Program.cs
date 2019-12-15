@@ -10,18 +10,11 @@ namespace ConsoleApp1
     internal static class Program
     {
         private static void Main() =>
-            Console.WriteLine("Take full advantage of C# 8 with ReSharper’s enhanced support");
-
-        private static T Lol<T>(Func<T> d)
-            where T : new()
-        {
-            // invalid R# error: "Left operand of the '??' operator should be of reference or nullable type"
-            return d() ?? new T();
-        }
+            Console.WriteLine("ReSharper");
 
         internal class Container<T>
-            // invalid R# error and invalid refactoring: "The class type constraint 'Item' must come before any other constraints"
-            where T : notnull, Item
+            // this line is needed to reproduce the following issue
+            where T : Item
         {
         }
 
@@ -29,7 +22,7 @@ namespace ConsoleApp1
         internal class Item
         {
         }
-        
+
         // CS8602: not supported by R#
         private static void Foo(string? s)
         {
@@ -48,12 +41,5 @@ namespace ConsoleApp1
             static string? F() => null;
             string f = F();
         }
-
-        // no refactoring suggested, as it was with Item class
-        internal class MyClass2
-        {
-        }
     }
-
-
 }
